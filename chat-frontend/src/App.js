@@ -1,8 +1,8 @@
-import ChatWindow from "./components/ChatWindow";
+import ChatMessages from "./components/ChatMessages";
 function App() {
   return (
-    <div>
-      <ChatWindow />
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <ChatMessages />
     </div>
   );
 }
