@@ -7,8 +7,6 @@ const socket = io.connect("http://localhost:5000", {
   transport: ["websocket"],
 });
 
-console.log(socket);
-
 class ChatMessages extends Component {
   constructor(props) {
     super(props);
