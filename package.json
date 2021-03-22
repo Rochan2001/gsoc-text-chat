@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "socket.io-react": "^1.2.0"
+  }
+}

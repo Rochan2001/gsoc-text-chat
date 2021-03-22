@@ -1,7 +1,22 @@
 import React, { Component } from "react";
 import "../App.css";
 import ChatForm from "./ChatForm";
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:5000", {
+  transport: ["websocket"],
+});
+
+console.log(socket);
+
 class ChatMessages extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      socket: socket,
+    };
+  }
+
   render() {
     return (
       <div style={{ marginTop: 20 }} id="frost-chat">
@@ -48,7 +63,7 @@ class ChatMessages extends Component {
                 </small>
               </div>
             </div>
-            <ChatForm />
+            <ChatForm socket={socket} />
           </div>
         </div>
       </div>
