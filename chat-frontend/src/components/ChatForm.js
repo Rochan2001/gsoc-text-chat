@@ -8,6 +8,8 @@ class ChatForm extends Component {
       handle: "",
       message: "",
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit = (event) => {
@@ -26,18 +28,25 @@ class ChatForm extends Component {
 
   render() {
     return (
-      <div class="msb-reply">
+      <div className="msb-reply">
         <form onSubmit={this.handleSubmit}>
           <input
+            name="handle"
             id="handle"
             type="text"
             placeholder="handle"
             onChange={this.handleChange}
           />
-          <input id="message" type="text" placeholder="Type a message" />
+          <input
+            name="message"
+            id="message"
+            onChange={this.handleChange}
+            type="text"
+            placeholder="Type a message"
+          />
           <button type="submit">
             send&nbsp;
-            <i class="fa fa-paper-plane-o"></i>
+            <i className="fa fa-paper-plane-o"></i>
           </button>
         </form>
       </div>

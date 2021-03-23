@@ -7,7 +7,7 @@ body {
 }
 
 .message-feed {
-  padding: 20px;
+  padding: 10px;
 }
 .pull-left {
   margin-right: 15px;
@@ -90,11 +90,12 @@ button {
 }
 
 #frost-chat {
-  max-width: 800px;
+  width: 600px;
   margin: 30px auto;
   border: 1px solid #ddd;
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
   border-radius: 2px;
+  background: #f8f8f8;
 }
 
 input {
@@ -108,4 +109,9 @@ input {
   border-bottom: 1px solid #eee;
   font-family: Nunito;
   font-size: 16px;
+}
+#chat-window {
+  height: 400px;
+  overflow: auto;
+  background: #f9f9f9;
 }
