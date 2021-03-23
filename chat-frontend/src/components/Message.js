@@ -1,8 +1,6 @@
 import React from "react";
 
 function Message(props) {
-  let curTime = new Date().toLocaleString();
-
   return (
     <div>
       <div className="message-feed media">
@@ -14,7 +12,7 @@ function Message(props) {
         <div className="media-body">
           <div className="mf-content">{props.message}</div>
           <small className="mf-date">
-            <i className="fa fa-clock-o"></i> {curTime}
+            <i className="fa fa-clock-o"></i> {props.time}
           </small>
         </div>
       </div>

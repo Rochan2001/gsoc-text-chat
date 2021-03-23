@@ -20,6 +20,7 @@ class ChatMessages extends Component {
   componentDidMount() {
     socket.on("chat", (data) => {
       data.id = shortid.generate();
+      data.curTime = new Date().toLocaleString();
       console.log(data);
       this.setState({
         messages: [...this.state.messages, data],
@@ -37,6 +38,7 @@ class ChatMessages extends Component {
                 key={message.id}
                 handle={message.handle}
                 message={message.message}
+                time={message.curTime}
               />
             ))}
           </div>
