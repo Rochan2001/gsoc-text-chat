@@ -5,9 +5,7 @@ import io from "socket.io-client";
 import shortid from "shortid";
 import Message from "./Message";
 
-const socket = io.connect("http://localhost:5000", {
-  transport: ["websocket"],
-});
+const socket = io.connect("http://localhost:5000");
 
 class ChatMessages extends Component {
   constructor(props) {

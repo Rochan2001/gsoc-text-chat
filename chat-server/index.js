@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const httpServer = require("http").createServer(app);
 const options = {
-  cors: true,
-  origins: ["http://localhost:3000"],
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
 };
 const io = require("socket.io")(httpServer, options);
 
@@ -18,10 +20,7 @@ app.use(express.static("public"));
 io.on("connection", (socket) => {
   console.log("Socket connection made " + socket.id);
   socket.on("chat", function (data) {
+    console.log(data);
     io.sockets.emit("chat", data);
-  });
-
-  socket.on("typing", function (data) {
-    socket.broadcast.emit("typing", data);
   });
 });
